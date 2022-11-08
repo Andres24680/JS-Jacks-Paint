@@ -1,9 +1,19 @@
 function configureListeners() {
-    let images = // select img elements  
+    let images = document.getElementsByTagName("img")// select img elements  
 
 
      for (var i = 0; i < images.length; i++) {        
-        // iterate over images and add mouseover event listeners      
+        // iterate over images and add mouseover event listeners\
+
+        //need to get each img id in the HTML
+        document.getElementById(images[i].id).addEventListener('mouseover',addOpacity)
+       
+        document.getElementById(images[i].id).addEventListener('mouseover', ()=>{
+            document.getElementById(images[i].id).style.opacity=0.1;
+        })
+    
+
+        //have to use the addOpacity function
     } 
 }
 
@@ -15,7 +25,7 @@ function addOpacity(event) {
 function removeOpacity(event) {
      //remove appropriate CSS class
 
-    let element = document.getElementById('color-price');
+     let element = document.getElementById('color-price');
         element.textContent = '';
         
     let color = document.getElementById('color-name');
@@ -29,43 +39,74 @@ function getProductInfo(paintColor) {
     let colorName;  
     
     switch (paintColor) {
-        case 'pn1':           
+        case 'pn1':  
+            price= 14.99
+            colorName= "Lime Green"    
+            updatePrice(colorName, price)     
             // set variables for price and color name and invoke a function to update the price     
             break;           
         case 'pn2':
+            price=11.14
+            colorName="Medium Brown"
+            updatePrice(colorName,price)
             // set variables for price and color name and invoke a function to update the price    
             break;            
         case 'pn3':
+            price=22.99
+            colorName="Royal Blue"
+            updatePrice(colorName,price)
             // set variables for price and color name and invoke a function to update the price  
             break;   
         case 'pn4':
+            price=13.42
+            colorName="Solid Red"
+            updatePrice(colorName, price)
             // set variables for price and color name and invoke a function to update the price  
             break;   
         case 'pn5':
+            colorName="Solid White"
+            price=21.98
+            updatePrice(colorName, price)
             // set variables for price and color name and invoke a function to update the price       
             break;   
         case 'pn6':
+            colorName="Solid Black"
+            price=4.99
+            updatePrice(colorName, price)
             // set variables for price and color name and invoke a function to update the price        
             break;   
         case 'pn7':
+            colorName="Solid Cyan"
+            price=8.22
+            updatePrice(colorName, price)
             // set variables for price and color name and invoke a function to update the price 
             break;   
         case 'pn8':
+            colorName="Solid Purple"
+            price=11.99
+            updatePrice(colorName, price)
             // set variables for price and color name and invoke a function to update the price   
             break;   
         case 'pn9':
+            colorName="Solid Yellow"
+            price=14.99
+            updatePrice(colorName, price)
             // set variables for price and color name and invoke a function to update the price 
             break;   
           default:              
     }
+    //function to invoke to update price is updatePrice.
 
     function updatePrice(colorName, price)
     {       
-        let colorPrice = // select element with corresponding id
+        let ColorPrice= document.getElementById("color-price")// select element with corresponding id
         // display price
-        
-        let color = // select element with corresponding id
+        ColorPrice.textContent =price;
+
+
+        let NameColor = document.getElementById("color-name")// select element with corresponding id
         //display color name
-    }
+        NameColor.textContent=colorName
+      }
     
 }
