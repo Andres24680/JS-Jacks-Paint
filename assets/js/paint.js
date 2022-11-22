@@ -1,10 +1,28 @@
 function configureListeners() {
+<<<<<<< HEAD
     let images = document.getElementsByTagName('img');    
 
 
      for (var i = 0; i < images.length; i++) {        
         document.getElementById(images[i].id).addEventListener('mouseover', addOpacity, false)        
         document.getElementById(images[i].id).addEventListener('mouseout', removeOpacity, false)  
+=======
+    let images = document.getElementsByTagName("img")// select img elements  
+
+
+     for (var i = 0; i < images.length; i++) {        
+        // iterate over images and add mouseover event listeners\
+
+        //need to get each img id in the HTML
+        document.getElementById(images[i].id).addEventListener('mouseover',addOpacity)
+       
+        document.getElementById(images[i].id).addEventListener('mouseover', ()=>{
+            document.getElementById(images[i].id).style.opacity=0.1;
+        })
+    
+
+        //have to use the addOpacity function
+>>>>>>> 3f7b93a76ec5f10f8392964b35c15a3b435c3b64
     } 
 }
 
@@ -20,7 +38,7 @@ function removeOpacity(event) {
         this.classList.remove('dim');
 }
 
-    let element = document.getElementById('color-price');
+     let element = document.getElementById('color-price');
         element.textContent = '';
         
     let color = document.getElementById('color-name');
@@ -33,6 +51,7 @@ function getProductInfo(paintColor) {
     let price;
     let colorName;  
     
+<<<<<<< HEAD
 switch (partNumber) {
         case 'pn1':           
             price = '$19.99'
@@ -78,18 +97,87 @@ switch (partNumber) {
             price = '$17.99'
             colorName = 'Bright Yellow'                       
             updatePrice(colorName, price)   
+=======
+    switch (paintColor) {
+        case 'pn1':  
+            price= 14.99
+            colorName= "Lime Green"    
+            updatePrice(colorName, price)     
+            // set variables for price and color name and invoke a function to update the price     
+            break;           
+        case 'pn2':
+            price=11.14
+            colorName="Medium Brown"
+            updatePrice(colorName,price)
+            // set variables for price and color name and invoke a function to update the price    
+            break;            
+        case 'pn3':
+            price=22.99
+            colorName="Royal Blue"
+            updatePrice(colorName,price)
+            // set variables for price and color name and invoke a function to update the price  
+            break;   
+        case 'pn4':
+            price=13.42
+            colorName="Solid Red"
+            updatePrice(colorName, price)
+            // set variables for price and color name and invoke a function to update the price  
+            break;   
+        case 'pn5':
+            colorName="Solid White"
+            price=21.98
+            updatePrice(colorName, price)
+            // set variables for price and color name and invoke a function to update the price       
+            break;   
+        case 'pn6':
+            colorName="Solid Black"
+            price=4.99
+            updatePrice(colorName, price)
+            // set variables for price and color name and invoke a function to update the price        
+            break;   
+        case 'pn7':
+            colorName="Solid Cyan"
+            price=8.22
+            updatePrice(colorName, price)
+            // set variables for price and color name and invoke a function to update the price 
+            break;   
+        case 'pn8':
+            colorName="Solid Purple"
+            price=11.99
+            updatePrice(colorName, price)
+            // set variables for price and color name and invoke a function to update the price   
+            break;   
+        case 'pn9':
+            colorName="Solid Yellow"
+            price=14.99
+            updatePrice(colorName, price)
+            // set variables for price and color name and invoke a function to update the price 
+>>>>>>> 3f7b93a76ec5f10f8392964b35c15a3b435c3b64
             break;   
         default:              
     }
+    //function to invoke to update price is updatePrice.
 
     function updatePrice(colorName, price)
     {       
+<<<<<<< HEAD
         let colorPrice = document.getElementById('color-price');
         colorPrice.textContent = price;
         
         let color = document.getElementById('color-name');
         color.textContent = colorName;
     }
+=======
+        let ColorPrice= document.getElementById("color-price")// select element with corresponding id
+        // display price
+        ColorPrice.textContent =price;
+
+
+        let NameColor = document.getElementById("color-name")// select element with corresponding id
+        //display color name
+        NameColor.textContent=colorName
+      }
+>>>>>>> 3f7b93a76ec5f10f8392964b35c15a3b435c3b64
     
 
 }
